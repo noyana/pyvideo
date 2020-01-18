@@ -45,4 +45,4 @@ class VideoFile(object):
             self._null_data()
 
     def __str__(self):
-        return "".format(self.filename, self.size, )
+        return "%s %f %t".format(self.filename, self.size, self.m_date )

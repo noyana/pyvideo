@@ -8,4 +8,4 @@ for x in os.walk('/mnt/d/Dizi'):
         result.append(y)
 for vf in result:
     in_vid = VideoFile(vf)
-    print(in_vid.filename, in_vid.v_codec_name)
+    print(in_vid)

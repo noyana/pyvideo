@@ -1,7 +1,7 @@
 ''' 
 Some service functions
 '''
-import datetime
+# import datetime
 video_extensions = ['.mkv', '.mp4', '.wmv', '.avi', '.mpg']
 def decompose_timedelta(duration):
     ''' takes number of seconds and returns hours, minutes, seconds and miliseconds '''
@@ -9,7 +9,7 @@ def decompose_timedelta(duration):
     minutes = (duration % 3600) // 60
     seconds = (duration % 60) // 1
     miliseconds = round((duration - hours * 3600 - minutes * 60 - seconds)*1000, 0) 
-    return hours, minutes, seconds, miliseconds
+    return (hours, minutes, seconds, miliseconds)
 
 def compose_timestring(duration):
     ho, min, sec, ms = decompose_timedelta(duration)
