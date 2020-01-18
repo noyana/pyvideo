@@ -2,6 +2,8 @@ from _utils import compose_timestring, video_extensions
 import os
 import ffmpeg
 import json
+import datetime
+import humanize
 
 class VideoFile(object):
     def _null_data(self):
@@ -45,4 +47,10 @@ class VideoFile(object):
             self._null_data()
 
     def __str__(self):
-        return "%s %f %t".format(self.filename, self.size, self.m_date )
+        return "{0}, Size: {1}, Date: {2}".format(self.filename, humanize.naturalsize(self.size), datetime.datetime.fromtimestamp(self.m_date).strftime('%Y-%m-%d %H:%M:%S') )
+
+    def convert(self, new_file = ''):
+        print(self)
+        in = ffmpeg.input(self.filename)
+        out = in.
+        pass
